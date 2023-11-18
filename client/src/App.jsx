@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, About, SignIn, SignUp, Profile } from "./pages";
 import Header from "./components/Header";
+import PriviteRoute from "./components/PriviteRoute";
 
 export default function App() {
   return (
@@ -12,7 +13,9 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route element={<PriviteRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
