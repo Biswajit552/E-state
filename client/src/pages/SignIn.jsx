@@ -50,14 +50,14 @@ export default function SignIn() {
         <input
           type="email"
           placeholder="email"
-          className="border p-3 rounded-lg"
+          className="border p-3 border-slate-600  rounded-full"
           id="email"
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="password"
-          className="border p-3 rounded-lg"
+          className="border p-3 border-slate-600  rounded-full"
           id="password"
           onChange={handleChange}
         />
