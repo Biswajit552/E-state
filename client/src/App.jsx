@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, About, SignIn, SignUp, Profile } from "./pages";
+import { Home, About, SignIn, SignUp, Profile, CreateListing } from "./pages";
 import Header from "./components/Header";
 import PriviteRoute from "./components/PriviteRoute";
 
@@ -15,6 +15,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route element={<PriviteRoute />}>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/create-listing" element={<CreateListing />} />
         </Route>
       </Routes>
     </BrowserRouter>
