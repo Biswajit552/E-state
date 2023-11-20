@@ -31,7 +31,7 @@ const listingSchema = new Mongoose.Schema(
       type: Number,
       required: true,
     },
-    funished: {
+    furnished: {
       type: Boolean,
       required: true,
     },
