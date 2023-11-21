@@ -7,6 +7,8 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
+import { MdDelete } from "react-icons/md";
+
 import {
   updateUserStart,
   updateUserSuccess,
@@ -137,6 +139,24 @@ export default function Profile() {
     }
   };
 
+  const handleListingDelete = async (listingId) => {
+    try {
+      const res = await fetch(`/api/listing/delete/${listingId}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        console.log(data.message);
+        return;
+      }
+      setUserListings((prev) =>
+        prev.filter((listing) => listing._id !== listingId)
+      );
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   //firebase Storage
   // allow read;
   // allow write:if
@@ -257,9 +277,9 @@ export default function Profile() {
               <div className="flex flex-col item-center">
                 <button
                   onClick={() => handleListingDelete(listing._id)}
-                  className="text-red-700 uppercase"
+                  className="p-2 text-base bg-red-600 text-white rounded-lg"
                 >
-                  Delete=
+                  <MdDelete />
                 </button>
                 <Link to={`/update-listing/${listing._id}`}>
                   <button className="text-green-700 uppercase">Edit</button>
