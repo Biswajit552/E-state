@@ -20,6 +20,8 @@ import {
   signOutUserFailure,
   signOutUserSuccess,
 } from "../redux/user/userSlice";
+import { BiSolidEditAlt } from "react-icons/bi";
+
 import { Link } from "react-router-dom";
 export default function Profile() {
   const fileRef = useRef(null);
@@ -244,7 +246,10 @@ export default function Profile() {
         {updateSuccess ? "update Successfully" : ""}{" "}
       </p>
       <p className="text-red-600 mt-5">{error ? error : ""}</p>
-      <button onClick={handelShowListings} className="text-green-700 w-full">
+      <button
+        onClick={handelShowListings}
+        className="bg-green-700 rounded-full p-3 text-white w-full font-semibold "
+      >
         Show Listings
       </button>
       <p className="text-red-700 mt-5">
@@ -262,7 +267,7 @@ export default function Profile() {
             >
               <Link to={`/listing/${listing._id}`}>
                 <img
-                  src={listing.imageURL}
+                  src={listing.imageUrls[0]}
                   alt="listing cover"
                   className="h-16 w-16 object-contain"
                 />
@@ -277,12 +282,14 @@ export default function Profile() {
               <div className="flex flex-col item-center">
                 <button
                   onClick={() => handleListingDelete(listing._id)}
-                  className="p-2 text-base bg-red-600 text-white rounded-lg"
+                  className=" text-red-700 rounded-lg text-2xl"
                 >
                   <MdDelete />
                 </button>
                 <Link to={`/update-listing/${listing._id}`}>
-                  <button className="text-green-700 uppercase">Edit</button>
+                  <button className="text-green-700 uppercase text-2xl">
+                    <BiSolidEditAlt />
+                  </button>
                 </Link>
               </div>
             </div>
