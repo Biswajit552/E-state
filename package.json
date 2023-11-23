@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon api/index.js",
-    "start": "node --experimental-modules --es-module-specifier-resolution=node api/index.js",
+    "start": "node  api/index.js",
     "build": "npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
