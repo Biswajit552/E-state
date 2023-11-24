@@ -51,7 +51,7 @@ export default function Header() {
               Home
             </li>
           </Link>
-          <Link to="/profile">
+          <Link to="/about">
             <li className="hidden  font-bold sm:inline text-slate-800 hover:underline ">
               About
             </li>
