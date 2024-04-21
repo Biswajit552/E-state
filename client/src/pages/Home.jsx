@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css/bundle";
 import ListingItem from "../components/ListingItem";
+import gsap from "gsap";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
+  const comp = useRef(null);
+
   SwiperCore.use([Navigation]);
   useEffect(() => {
     const fetchOfferListings = async () => {
@@ -43,19 +46,46 @@ export default function Home() {
       }
     };
     fetchOfferListings();
+    let ctx = gsap.context(() => {
+      const t1 = gsap.timeline();
+      t1.from(["#hero"], {
+        opacity: 0,
+        x: -100,
+        duration: 1.2,
+        delay: 0.4,
+      })
+        .from("#swiper", {
+          opacity: 0,
+          x: -100,
+          duration: 1.2,
+          delay: 0.3,
+        })
+        .from("#para", {
+          opacity: 0,
+          x: -100,
+          duration: 1.0,
+        });
+    }, comp);
+    return () => ctx.revert();
   }, []);
   return (
     <div>
       {/* top */}
-      <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
-        <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">
+      <div
+        className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto overflow-hidden"
+        ref={comp}
+      >
+        <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl" id="hero">
           Find your next <span className="text-slate-500">perfect</span>
-          <br />
-          place with ease
         </h1>
-        <div className="text-gray-400 text-xs sm:text-sm">
-          Sahand Estate is the best place to find your next perfect place to
-          live.
+        <h1
+          className="text-slate-700 font-bold text-3xl lg:text-6xl"
+          id="swiper"
+        >
+          place with <span className="text-slate-500">ease</span>
+        </h1>
+        <div className="text-gray-400 text-xs sm:text-sm" id="para">
+          Estate is the best place to find your next perfect place to live.
           <br />
           We have a wide range of properties for you to choose from.
         </div>

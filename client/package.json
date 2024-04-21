@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
+    "@studio-freight/lenis": "^1.0.42",
     "firebase": "^10.6.0",
     "framer-motion": "^10.16.5",
+    "gsap": "^3.12.5",
     "locomotive-scroll": "^4.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

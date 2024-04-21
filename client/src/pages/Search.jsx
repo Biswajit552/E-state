@@ -233,7 +233,7 @@ export default function Search() {
         <h1 className="text-3xl font-semibold border-b p-3 text-slate-700 mt-5">
           Listing results:
         </h1>
-        <div className="p-7 flex flex-wrap gap-4">
+        <div className="p-5 flex flex-wrap gap-2">
           {!loading && listings.length === 0 && (
             <p className="text-xl text-slate-700">No listing found!</p>
           )}

@@ -15,6 +15,7 @@ import Header from "./components/Header";
 import PriviteRoute from "./components/PriviteRoute";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "./pages/Preloader";
+import Lenis from "@studio-freight/lenis";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,12 +31,21 @@ export default function App() {
         window.scrollTo(0, 0);
       }, 2000);
     })();
+
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
   }, []);
   return (
     <BrowserRouter>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
-      </AnimatePresence>
+      </AnimatePresence> */}
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
