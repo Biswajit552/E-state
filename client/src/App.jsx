@@ -43,9 +43,9 @@ export default function App() {
   }, []);
   return (
     <BrowserRouter>
-      {/* <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
-      </AnimatePresence> */}
+      </AnimatePresence>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
