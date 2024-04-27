@@ -16,6 +16,7 @@ import PriviteRoute from "./components/PriviteRoute";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "./pages/Preloader";
 import Lenis from "@studio-freight/lenis";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -63,6 +64,7 @@ export default function App() {
           />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

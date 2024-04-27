@@ -23,14 +23,15 @@ export default function Header() {
   }, [location.search]);
 
   return (
-    <header className="bg-slate-200 shadow-md">
-      <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
+    <header className="bg-slate-200  ">
+      <div className="flex  justify-around items-center max-w-6xl mx-auto p-3">
         <Link to="/">
           <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-            <span className="text-slate-500">Biswa</span>
-            <span className="text-slate-700">Estate</span>
+            <span className="text-slate-500">stay</span>
+            <span className="text-slate-700">Choice</span>
           </h1>
         </Link>
+
         <form
           onSubmit={handelSubmit}
           className="bg-slate-100 p-2 rounded-2xl flex items-center"
@@ -45,7 +46,16 @@ export default function Header() {
             <FaSearch className="text-slate-700" />
           </button>
         </form>
-        <ul className="flex gap-4">
+        <ul className="flex gap-4 items-center">
+          <Link to="/create-listing">
+            <div class="style__postContainer flex items-center  bg-white rounded-xl font-serif p-1">
+              <div class="style__post">Post property</div>
+              <div class="fre__outerwrap mt-1">
+                FREE<div class="fre__innerwrap"></div>
+              </div>
+            </div>
+          </Link>
+
           <Link to="/">
             <li className="hidden  font-bold sm:inline text-slate-800 hover:underline ">
               Home

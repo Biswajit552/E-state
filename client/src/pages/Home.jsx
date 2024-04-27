@@ -6,6 +6,7 @@ import SwiperCore from "swiper";
 import "swiper/css/bundle";
 import ListingItem from "../components/ListingItem";
 import gsap from "gsap";
+import SearchHome from "./SearchHome";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -69,10 +70,31 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
   return (
-    <div>
+    <div className="">
       {/* top */}
-      <div
-        className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto overflow-hidden"
+
+      {/* swiper */}
+      <Swiper navigation>
+        {offerListings &&
+          offerListings.length > 0 &&
+          offerListings.map((listing) => (
+            <SwiperSlide>
+              <div
+                style={{
+                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
+                  backgroundSize: "cover",
+                }}
+                className="h-[300px] "
+                key={listing._id}
+              ></div>
+            </SwiperSlide>
+          ))}
+      </Swiper>
+      <div className="hidden md:block mx-[350px]  -mt-16 absolute   z-10  w-[800px] ">
+        <SearchHome />
+      </div>
+      {/* <div
+        className="flex flex-col gap-6 md:mt-10 p-10 px-3 max-w-6xl mx-auto overflow-hidden"
         ref={comp}
       >
         <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl" id="hero">
@@ -95,26 +117,7 @@ export default function Home() {
         >
           Let's get started...
         </Link>
-      </div>
-
-      {/* swiper */}
-      <Swiper navigation>
-        {offerListings &&
-          offerListings.length > 0 &&
-          offerListings.map((listing) => (
-            <SwiperSlide>
-              <div
-                style={{
-                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
-                  backgroundSize: "cover",
-                }}
-                className="h-[500px]"
-                key={listing._id}
-              ></div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
-
+      </div> */}
       {/* listing results for offer, sale and rent */}
 
       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
