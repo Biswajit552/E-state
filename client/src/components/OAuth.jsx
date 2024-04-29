@@ -38,12 +38,12 @@ export default function OAuth() {
     <button
       type="button"
       onClick={handelGoogleClick}
-      className="bg-red-600 text-white p-3 rounded-lg uppercase hover:opacity-95 flex flex-wrap justify-center items-center gap-1"
+      className=" text-white bg-green-400 p-3 rounded-lg uppercase hover:opacity-95 flex flex-wrap justify-center items-center gap-3"
     >
-      continue with google
       <span className="text-2xl">
         <FcGoogle />
       </span>
+      Signin With Google
     </button>
   );
 }

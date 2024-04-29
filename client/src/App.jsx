@@ -17,6 +17,7 @@ import { AnimatePresence } from "framer-motion";
 import Preloader from "./pages/Preloader";
 import Lenis from "@studio-freight/lenis";
 import Footer from "./components/Footer";
+import Listings from "./pages/Listings";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,6 +58,7 @@ export default function App() {
         <Route path="/listing/:listingId" element={<Listing />} />
         <Route element={<PriviteRoute />}>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/show-listings" element={<Listings />} />
           <Route path="/create-listing" element={<CreateListing />} />
           <Route
             path="/update-listing/:listingId"
@@ -64,7 +66,7 @@ export default function App() {
           />
         </Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

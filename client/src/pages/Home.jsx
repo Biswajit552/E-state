@@ -7,6 +7,8 @@ import "swiper/css/bundle";
 import ListingItem from "../components/ListingItem";
 import gsap from "gsap";
 import SearchHome from "./SearchHome";
+import MyLocation from "./MyLocation";
+import BestMobile from "./BestMobile";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -70,7 +72,7 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
   return (
-    <div className="">
+    <div className="mt-14">
       {/* top */}
 
       {/* swiper */}
@@ -84,7 +86,7 @@ export default function Home() {
                   background: `url(${listing.imageUrls[0]}) center no-repeat`,
                   backgroundSize: "cover",
                 }}
-                className="h-[300px] "
+                className="h-[300px] hover:scale-105 ease-in-out duration-300 cursor-pointer"
                 key={listing._id}
               ></div>
             </SwiperSlide>
@@ -92,6 +94,12 @@ export default function Home() {
       </Swiper>
       <div className="hidden md:block mx-[350px]  -mt-16 absolute   z-10  w-[800px] ">
         <SearchHome />
+      </div>
+      <div className="mt-20 w-full items-center text-center">
+        <h1 className="text-gray-500 font-serif p-2">
+          GET STARTED WITH EXPLORING REAL ESTATE OPTIONS
+        </h1>
+        <BestMobile />
       </div>
       {/* <div
         className="flex flex-col gap-6 md:mt-10 p-10 px-3 max-w-6xl mx-auto overflow-hidden"

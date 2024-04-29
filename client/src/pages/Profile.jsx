@@ -34,6 +34,7 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
+  console.log(userListings);
 
   const handelUpload = (file) => {
     const storage = getStorage(app);
