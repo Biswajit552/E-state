@@ -52,7 +52,9 @@ export default function Contact({ listing, share }) {
 
           <Link
             className="bg-green-500 text-white p-3 text-center rounded-lg hover:opacity-95"
-            to={`https://wa.me/9438688257?text=i am interested in your property  ${
+            to={`https://wa.me/${
+              landlord.phone
+            }?text=i am interested in your property  ${
               listing.name
             } %0a Address:- ${listing.address} %0a Price:- ${
               listing.regularPrice
