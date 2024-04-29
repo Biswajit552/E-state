@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Contact({ listing }) {
+export default function Contact({ listing, share }) {
   const [landlord, setLandlord] = useState(null);
   const [message, setMessage] = useState("");
+  console.log(share);
   console.log(landlord);
   const onChange = (e) => {
     setMessage(e.target.value);
@@ -51,10 +52,16 @@ export default function Contact({ listing }) {
 
           <Link
             className="bg-green-500 text-white p-3 text-center rounded-lg hover:opacity-95"
-            to={`https://wa.me/${landlord.phone}?text=i am interested in your property  ${listing.name} %0a Address:- ${listing.address} %0a Price:- ${listing.regularPrice}`}
+            to={`https://wa.me/9438688257?text=i am interested in your property  ${
+              listing.name
+            } %0a Address:- ${listing.address} %0a Price:- ${
+              listing.regularPrice
+            } %0a  photo:-${
+              "https://staychoice-ysix.onrender.com/listing/" + listing._id
+            }`}
             // data-action="share/whatsapp/share"
           >
-            Share via Whatsapp
+            Share via Whatsapp to ${landlord.username}
           </Link>
         </div>
       )}
