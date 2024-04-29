@@ -27,6 +27,7 @@ export default function Listing() {
   const [contact, setContact] = useState(false);
   const params = useParams();
   const { currentUser } = useSelector((state) => state.user);
+  console.log(listing);
 
   useEffect(() => {
     const fetchListing = async () => {
@@ -150,7 +151,7 @@ export default function Listing() {
                 onClick={() => setContact(true)}
                 className="bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3"
               >
-                Contact landlord
+                Contact Property Ownner
               </button>
             )}
             {contact && <Contact listing={listing} />}

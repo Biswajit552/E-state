@@ -52,6 +52,26 @@ export default function SignUp() {
         {/*input section*/}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
+            <label>Phone No :- </label>
+            <input
+              type="number"
+              placeholder="Phone Number"
+              className=" p-3 rounded-2xl"
+              id="phone"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label>UserName :- </label>
+            <input
+              type="test"
+              placeholder="username"
+              className=" p-3 rounded-2xl"
+              id="username"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
             <label>Email :- </label>
             <input
               type="email"
@@ -76,7 +96,7 @@ export default function SignUp() {
             disabled={loading}
             className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
           >
-            {loading ? "Loading..." : "Sign In"}
+            {loading ? "Loading..." : "Sign up"}
           </button>
         </form>
         <div className="flex gap-2 mt-5">

@@ -34,7 +34,7 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
-  console.log(userListings);
+  // console.log(userListings);
 
   const handelUpload = (file) => {
     const storage = getStorage(app);
@@ -193,6 +193,14 @@ export default function Profile() {
             ""
           )}
         </p>
+        <input
+          type="number"
+          placeholder="Phone Number"
+          defaultValue={currentUser.phone}
+          className="border border-slate-500  rounded-full p-3"
+          id="phone"
+          onChange={handelChange}
+        />
         <input
           type="text"
           placeholder="username"

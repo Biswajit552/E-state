@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function Contact({ listing }) {
   const [landlord, setLandlord] = useState(null);
   const [message, setMessage] = useState("");
+  console.log(landlord);
   const onChange = (e) => {
     setMessage(e.target.value);
   };
@@ -20,6 +21,8 @@ export default function Contact({ listing }) {
     };
     fetchLandlord();
   }, [listing.userRef]);
+  console.log(listing);
+  console.log(listing.name);
   return (
     <>
       {landlord && (
@@ -43,7 +46,15 @@ export default function Contact({ listing }) {
             to={`mailto:${landlord.email}?subject=Regarding ${listing.name}&body=${message}`}
             className="bg-slate-700 text-white text-center p-3 uppercase rounded-lg hover:opacity-95"
           >
-            Send Message
+            Send Message to Email
+          </Link>
+
+          <Link
+            className="bg-green-500 text-white p-3 text-center rounded-lg hover:opacity-95"
+            to={`https://wa.me/${landlord.phone}?text=i am interested in your property  ${listing.name} %0a Address:- ${listing.address} %0a Price:- ${listing.regularPrice}`}
+            // data-action="share/whatsapp/share"
+          >
+            Share via Whatsapp
           </Link>
         </div>
       )}
