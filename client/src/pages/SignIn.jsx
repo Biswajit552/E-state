@@ -44,7 +44,7 @@ export default function SignIn() {
     }
   };
   return (
-    <div className=" w-screen h-[94vh]   bg-cover flex bg-[url('src/assets/sign.jpg')] mt-14">
+    <div className=" w-screen h-[94vh]   bg-cover flex Home mt-14">
       {/*content box */}
       <div className="flex flex-col items-center w-[100%]  h-full backdrop-blur-sm  p-4 px-4 gap-4">
         {/*welcome*/}

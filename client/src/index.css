@@ -5,6 +5,9 @@
 body {
   background-color: rgb(241, 245, 241);
 }
+.Home {
+  background-image: url("./assets/sign.jpg");
+}
 /* .swiper-button-next {
   background-color: white;
   right: 10px;
