@@ -9,12 +9,15 @@ import gsap from "gsap";
 import SearchHome from "./SearchHome";
 import MyLocation from "./MyLocation";
 import BestMobile from "./BestMobile";
+import { asset43, asset48, asset51, asset54 } from "../assets";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
   const comp = useRef(null);
+  const month = Date().slice(4, 15);
+  console.log(month);
 
   SwiperCore.use([Navigation]);
   useEffect(() => {
@@ -190,6 +193,74 @@ export default function Home() {
           </div>
         )}
       </div>
+
+      <div className="flex    mx-auto justify-center">
+        <div className="w-[600px]">
+          <img src={asset48} alt="asset48" className="p-5" />
+        </div>
+        <div className="text-left my-28 leading-10 ">
+          <p className="text-slate-400 font-bold">POST YOUR PROPERTY</p>
+          <h1 className="font-serif font-bold text-3xl  space-x-3 tracking-wider">
+            Register to post your <br /> property for
+            <span className="bg-green-600 text-white text-xl px-2 rounded-md py-1">
+              FREE
+            </span>
+          </h1>
+          <h1 className="font-serif text-gray-600 text-base tracking-wider mt-4 mb-5">
+            Sell or rent your residential/commercial property
+          </h1>
+          <Link className="text-white font-bold  text-base text-center  bg-blue-600 px-4 py-2 rounded-md ">
+            Post Your Perpoty FREE
+          </Link>
+        </div>
+      </div>
+      <div className="flex w-[60%] z-20 ml-80 -mt-24 bg-white p-5 rounded-xl justify-evenly mx-auto absolute ">
+        <div className="w-1/3">
+          <h1 className="text-2xl font-bold">
+            Articles and guides <br /> for property <br />
+            owners{" "}
+          </h1>
+          <p className="text-sm text-gray-500">
+            Reads from Beginners check-list to pro Tips
+          </p>
+        </div>
+        <div className="leading-10 ">
+          <div className="mb-3 flex text-xs gap-2">
+            <img src={asset43} alt="" className="w-28 rounded-xl" />
+            <p>
+              How to Find Vastu Dosh in <br /> House ? <br />
+              <span className="text-zinc-700">{month}</span>
+            </p>
+          </div>
+          <div className="mb-3 flex text-xs gap-2">
+            <img src={asset51} alt="" className="w-28 rounded-xl" />
+            <p>
+              Guide to Property Tax Online <br />
+              Payment in Udupi ? <br />
+              <span className="text-zinc-700">{month}</span>
+            </p>
+          </div>
+          <p>Read realty news,guides & articles </p>
+        </div>
+        <div className="leading-10 ">
+          <div className="mb-3 flex text-xs gap-2">
+            <img src={asset43} alt="" className="w-28 rounded-xl" />
+            <p>
+              How to Find Vastu Dosh in <br /> House ? <br />
+              <span className="text-zinc-700">{month}</span>
+            </p>
+          </div>
+          <div className="mb-3 flex text-xs gap-2">
+            <img src={asset51} alt="" className="w-28 rounded-xl" />
+            <p>
+              Guide to Property Tax Online <br />
+              Payment in Udupi ? <br />
+              <span className="text-zinc-700">{month}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="text-center mt-32">Our services </div>
     </div>
   );
 }

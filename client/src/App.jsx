@@ -66,7 +66,7 @@ export default function App() {
           />
         </Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
