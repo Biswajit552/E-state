@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export default function Contact({ listing, share }) {
   const [landlord, setLandlord] = useState(null);
   const [message, setMessage] = useState("");
-  console.log(share);
   console.log(landlord);
   const onChange = (e) => {
     setMessage(e.target.value);
@@ -63,7 +62,7 @@ export default function Contact({ listing, share }) {
             }`}
             // data-action="share/whatsapp/share"
           >
-            Share via Whatsapp to ${landlord.username}
+            Share via Whatsapp to {landlord.username}
           </Link>
         </div>
       )}
