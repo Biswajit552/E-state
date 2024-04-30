@@ -103,10 +103,10 @@ const ContactUs = () => {
                           Technical support
                         </p>
                         <p class="text-neutral-500 dark:text-neutral-200">
-                          support@example.com
+                          support@pvt.com
                         </p>
                         <p class="text-neutral-500 dark:text-neutral-200">
-                          +1 234-567-89
+                          +91 9438688257
                         </p>
                       </div>
                     </div>
@@ -136,10 +136,10 @@ const ContactUs = () => {
                           Sales questions
                         </p>
                         <p class="text-neutral-500 dark:text-neutral-200">
-                          sales@example.com
+                          sales@pvt.com
                         </p>
                         <p class="text-neutral-500 dark:text-neutral-200">
-                          +1 234-567-89
+                          +91 9438688257
                         </p>
                       </div>
                     </div>
@@ -165,12 +165,14 @@ const ContactUs = () => {
                         </div>
                       </div>
                       <div class="ml-6 grow">
-                        <p class="mb-2 font-bold dark:text-white">Press</p>
-                        <p class="text-neutral-500 dark:text-neutral-200">
-                          press@example.com
+                        <p class="mb-2 font-bold dark:text-white">
+                          Digital help
                         </p>
                         <p class="text-neutral-500 dark:text-neutral-200">
-                          +1 234-567-89
+                          digital@pvt.com
+                        </p>
+                        <p class="text-neutral-500 dark:text-neutral-200">
+                          +91 234-567-89
                         </p>
                       </div>
                     </div>
@@ -198,10 +200,10 @@ const ContactUs = () => {
                       <div class="ml-6 grow">
                         <p class="mb-2 font-bold dark:text-white">Bug report</p>
                         <p class="text-neutral-500 dark:text-neutral-200">
-                          bugs@example.com
+                          bugs@pvt.com
                         </p>
                         <p class="text-neutral-500 dark:text-neutral-200">
-                          +1 234-567-89
+                          +91 9438688257
                         </p>
                       </div>
                     </div>
