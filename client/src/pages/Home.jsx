@@ -10,6 +10,7 @@ import SearchHome from "./SearchHome";
 import MyLocation from "./MyLocation";
 import BestMobile from "./BestMobile";
 import { asset43, asset48, asset51, asset54 } from "../assets";
+import ContactUs from "./ContactUs";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -145,7 +146,7 @@ export default function Home() {
                 Show more offers
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-around">
               {offerListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
@@ -165,7 +166,7 @@ export default function Home() {
                 Show more places for rent
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-around">
               {rentListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
@@ -185,7 +186,7 @@ export default function Home() {
                 Show more places for sale
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-around">
               {saleListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
@@ -260,7 +261,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="text-center mt-32">Our services </div>
+      <h1 className="text-center mt-32 text-slate-700 text-3xl font-bold">
+        Our services{" "}
+      </h1>
+      <div>
+        <ContactUs />
+      </div>
     </div>
   );
 }
