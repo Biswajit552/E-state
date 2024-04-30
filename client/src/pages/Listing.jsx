@@ -15,6 +15,11 @@ import {
   FaShare,
 } from "react-icons/fa";
 import Contact from "../components/Contact";
+import OwnnerData from "./OwnnerData";
+import {
+  BsFillArrowDownCircleFill,
+  BsFillArrowUpCircleFill,
+} from "react-icons/bs";
 
 // https://sabe.io/blog/javascript-format-numbers-commas#:~:text=The%20best%20way%20to%20format,format%20the%20number%20with%20commas.
 
@@ -25,6 +30,7 @@ export default function Listing() {
   const [error, setError] = useState(false);
   const [copied, setCopied] = useState(false);
   const [contact, setContact] = useState(false);
+  const [ownner, setOwnner] = useState(false);
   const params = useParams();
   const { currentUser } = useSelector((state) => state.user);
   console.log(listing);
@@ -146,6 +152,19 @@ export default function Listing() {
                 {listing.furnished ? "Furnished" : "Unfurnished"}
               </li>
             </ul>
+
+            <button
+              className="bg-green-900 text-white rounded-lg  hover:opacity-95 p-3 flex items-center gap-2 mx-auto"
+              onClick={() => setOwnner(!ownner)}
+            >
+              Owner Details
+              {ownner ? (
+                <BsFillArrowUpCircleFill />
+              ) : (
+                <BsFillArrowDownCircleFill />
+              )}
+            </button>
+            {ownner && <OwnnerData listing={listing} />}
             {currentUser && listing.userRef !== currentUser._id && !contact && (
               <button
                 onClick={() => setContact(true)}
